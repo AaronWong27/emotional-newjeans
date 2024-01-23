@@ -22,7 +22,10 @@ def process_data():
 
 
 def emotion_detection(x):
+    # Get all the emotion value
+    # There are 5 different emotion: Happy, Angry, Sad, Suprise, and Fear
     all_emotions_value = te.get_emotion(x)
+    # Get the keymax values
     Keymax_value = max(zip(all_emotions_value.values(), all_emotions_value.keys()))
     return Keymax_value
 

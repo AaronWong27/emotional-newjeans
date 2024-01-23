@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="{{ url_for('static',filename='styles/style.css') }}">
     <title>Emotion Detection</title>
     <!-- Reference the external JavaScript file from the static folder -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
 </head>
 <body>
 
@@ -17,6 +18,7 @@
 
     <div id="resultContainer"></div>
 
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 
 </body>
