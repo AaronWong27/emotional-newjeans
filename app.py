@@ -29,10 +29,3 @@ def emotion_detection(x):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-input_data = "I love newjeans!"
-
-result = emotion_detection(input_data)
-print(result)

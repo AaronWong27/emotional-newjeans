@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Detection</title>
     <!-- Reference the external JavaScript file from the static folder -->
-
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
 
-<form id="myForm">
-    <label for="textBox">Enter Text:</label>
-    <input type="text" id="textBox" name="user_input">
-    <button type="button" id="submitButton" onclick="submitData()">Submit</button>
-</form>
+    <form id="myForm">
+        <label for="textBox">Enter Text:</label>
+        <input type="text" id="textBox" name="user_input">
+        <button type="button" id="submitButton" onclick="submitData()">Submit</button>
+    </form>
 
-<div id="resultContainer"></div>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div id="resultContainer"></div>
 
 
 
