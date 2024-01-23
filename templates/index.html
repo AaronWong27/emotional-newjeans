@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <!-- Reference the external JavaScript file from the static folder -->
+
+</head>
+<body>
+
+<form id="myForm">
+    <label for="textBox">Enter Text:</label>
+    <input type="text" id="textBox" name="user_input">
+    <button type="button" id="submitButton" onclick="submitData()">Submit</button>
+</form>
+
+<div id="resultContainer"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+</body>
+</html>
