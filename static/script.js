@@ -14,13 +14,41 @@ function submitData() {
             },
             body: 'user_input=' + encodeURIComponent(inputValue),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            // Display the result in the resultContainer div
-            var resultContainer = document.getElementById("resultContainer");
-            resultContainer.innerHTML = "Detected Emotion: " + data[1] + " with a score of " + data[0];
+            // Display the result in a pop-up
+            var popup = document.createElement("div");
+            popup.className = "popup";
+            popup.innerHTML = "Detected Emotion: " + data[1] + " with a score of " + data[0]
+
+            if (data[1].toLowerCase() === "surprise") {
+                // Load an image for Surprise
+                var spotifyEmbed = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5sdQOyqq2IDhvmx2lHOpwd?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                popup.innerHTML += spotifyEmbed;
+            }
+            else if (data[1].toLowerCase() === "happy") {
+                // Load an image for Surprise
+                var spotifyEmbed = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0a4MMyCrzT0En247IhqZbD?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+                popup.innerHTML += spotifyEmbed;
+            }
+            popup.innerHTML +=  "<br><button onclick='closePopup()'>Close</button>";
+
+            document.body.appendChild(popup);
         })
         .catch(error => console.error('Error:', error));
+    }
+}
+
+
+function closePopup() {
+    var popup = document.querySelector(".popup");
+    if (popup) {
+        popup.parentNode.removeChild(popup);
     }
 }
 
