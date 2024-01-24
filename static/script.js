@@ -4,8 +4,6 @@ let interval_id;
 let x_incr = 1;
 let y_incr = 1;
 
-
-
 // Wait for the DOM to be fully loaded before executing the script
 function submitData() {
     // Retrieve the value from the text box
@@ -157,6 +155,3 @@ var largeTextArea = document.getElementById("largeTextArea");
 document.getElementById("submitButton").addEventListener("click", function() {
     submitData();
 });
-
-
-

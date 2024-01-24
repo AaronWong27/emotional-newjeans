@@ -10,16 +10,13 @@
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
-        // Set a global variable with the image URL
         var imgSrc = "{{ url_for('static', filename='media/omg.gif') }}";
     </script>
     <audio id="bumpAudio" src="{{ url_for('static', filename='media/roblox-oof.mp3')}}" preload="auto"></audio>
 </head>
 <body>
 
-    <div id="newjeans">
-
-    </div>
+    <div id="newjeans"></div>
     <form id="myForm">
         <label for="largeTextArea">Enter Text:</label>
         <textarea id="largeTextArea" name="user_input" rows="5" cols="30"></textarea>
