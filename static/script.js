@@ -101,9 +101,11 @@ function handleCollision() {
 
     if (left <= 0 || left + newjeans_width >= win_width) {
         x_incr = -x_incr;  // Corrected direction
+        playBumpAudio();
     }
     if (top <= 0 || top + newjeans_height >= win_height) {
         y_incr = -y_incr;  // Corrected direction
+        playBumpAudio();
     }
 }
 
@@ -113,6 +115,14 @@ function frame() {
     handleCollision();
     newjeans.style.top = newjeans.offsetTop + y_incr + 'px';
     newjeans.style.left = newjeans.offsetLeft + x_incr + 'px';
+}
+
+
+function playBumpAudio() {
+    var audio = document.getElementById("bumpAudio");
+    if (audio) {
+        audio.play();
+    }
 }
 
 
