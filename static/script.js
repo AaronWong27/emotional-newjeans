@@ -120,7 +120,8 @@ function frame() {
 
 function playBumpAudio() {
     var audio = document.getElementById("bumpAudio");
-    if (audio) {
+    var img = document.getElementById("newjeans-img");
+    if (audio && img) {
         audio.play();
     }
 }
