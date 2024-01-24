@@ -2,7 +2,10 @@ import text2emotion as te
 import pandas as pd
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+# Have to do pip install emotion 0.6.0
+
+
+app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def index():

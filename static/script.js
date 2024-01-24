@@ -1,41 +1,9 @@
-let dvd;
+// Define the global variables for the bouncing newjeans effect
+let newjeans;
+let interval_id;
+let x_incr = 1;
+let y_incr = 1;
 
-function init() {
-    dvd = document.getElementById('dvd');
-
-    if (!dvd) {
-        console.error("Element with id 'dvd' not found.");
-        return;
-    }
-
-    dvd.style.position = 'absolute';
-    document.body.style.background = '#4d4d4d';
-    setInterval(frame, 5);
-}
-
-function handle_collision() {
-    let dvd_height = dvd.offsetHeight;
-    let dvd_width = dvd.offsetWidth;
-    let left = dvd.offsetLeft;
-    let top = dvd.offsetTop;
-    let win_height = window.innerHeight;
-    let win_width = window.innerWidth;
-
-    if (left <= 0 || left + dvd_width >= win_width) {
-        x_incr = ~x_incr + 1;
-        update_color();
-    }
-    if (top <= 0 || top + dvd_height >= win_height) {
-        y_incr = ~y_incr + 1;
-        update_color();
-    }
-}
-
-function frame() {
-    handle_collision();
-    dvd.style.top = dvd.offsetTop + y_incr + 'px';
-    dvd.style.left = dvd.offsetLeft + x_incr + 'px';
-}
 
 
 // Wait for the DOM to be fully loaded before executing the script
@@ -94,9 +62,57 @@ function submitData() {
             popup.innerHTML +=  "<br><button onclick='closePopup()'>Close</button>";
 
             document.body.appendChild(popup);
+
+            initBouncingNewjeans();
         })
         .catch(error => console.error('Error:', error));
     }
+}
+
+// Function to initialize the bouncing DVD effect
+function initBouncingNewjeans() {
+    newjeans = document.getElementById('newjeans');
+    if (newjeans) {
+        newjeans.style.position = 'absolute';
+        newjeans.style.top = '50px';
+        newjeans.style.left = '50px';
+        newjeans.style.opacity = `1`;
+
+        var img = document.createElement("img");
+        img.id = "newjeans-img"; // Set the correct ID for the image
+        img.src = imgSrc;
+        img.alt = "Bouncing Jeans Image";
+        
+        newjeans.appendChild(img);
+
+        clearInterval(interval_id);
+        interval_id = setInterval(frame, 5);
+    }
+}
+
+// Function to handle collision for the bouncing newjeans effect
+function handleCollision() {
+    let newjeans_height = newjeans.offsetHeight;
+    let newjeans_width = newjeans.offsetWidth;
+    let left = newjeans.offsetLeft;
+    let top = newjeans.offsetTop;
+    let win_height = window.innerHeight;
+    let win_width = window.innerWidth;
+
+    if (left <= 0 || left + newjeans_width >= win_width) {
+        x_incr = -x_incr;  // Corrected direction
+    }
+    if (top <= 0 || top + newjeans_height >= win_height) {
+        y_incr = -y_incr;  // Corrected direction
+    }
+}
+
+// Function to update the frame for the bouncing newjeans effect
+function frame() {
+    console.log("Updating Frame");
+    handleCollision();
+    newjeans.style.top = newjeans.offsetTop + y_incr + 'px';
+    newjeans.style.left = newjeans.offsetLeft + x_incr + 'px';
 }
 
 
@@ -104,6 +120,12 @@ function closePopup() {
     var popup = document.querySelector(".popup");
     if (popup) {
         popup.parentNode.removeChild(popup);
+
+        // Remove image
+        var img = document.getElementById("newjeans-img");
+        if (img) {
+            img.parentNode.removeChild(img);
+        }
     }
 }
 
