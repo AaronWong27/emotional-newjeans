@@ -42,3 +42,11 @@ body {
     opacity: 0;
     z-index: 420;
 }
+
+@media only screen and (max-height: 600px) {
+   #newjeans img {
+        max-width:50%;
+        height: auto;
+   }
+  }
+  
