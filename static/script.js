@@ -95,7 +95,9 @@ function handleCollision() {
     let left = newjeans.offsetLeft;
     let top = newjeans.offsetTop;
     let win_height = window.innerHeight;
+    console.log(win_height);
     let win_width = window.innerWidth;
+    console.log(win_width);
 
     if (left <= 0 || left + newjeans_width >= win_width) {
         x_incr = -x_incr;  // Corrected direction

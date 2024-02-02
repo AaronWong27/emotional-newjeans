@@ -43,10 +43,16 @@ body {
     z-index: 420;
 }
 
+#newjeans img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media only screen and (max-height: 1080px) {
    #newjeans img {
         max-width:50%;
         height: auto;
+
    }
   }
   
