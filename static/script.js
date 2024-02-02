@@ -79,7 +79,7 @@ function initBouncingNewjeans() {
         var img = document.createElement("img");
         img.id = "newjeans-img"; // Set the correct ID for the image
         img.src = imgSrc;
-        img.alt = "Bouncing Jeans Image";
+        img.alt = "Bouncing NewJeans Image";
         
         newjeans.appendChild(img);
 
