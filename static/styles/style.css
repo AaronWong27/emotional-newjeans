@@ -49,10 +49,8 @@ body {
 }
 
 @media only screen and (max-height: 1080px) {
-   #newjeans img {
-        max-width:50%;
-        height: auto;
-
+   #newjeans {
+        transform:scale(0.5);
    }
   }
   
