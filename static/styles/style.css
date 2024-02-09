@@ -44,7 +44,7 @@ body {
 }
 
 #newjeans img {
-    max-width: 100%;
+    transform:scale(1);
     height: auto;
 }
 
