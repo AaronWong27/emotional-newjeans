@@ -99,6 +99,13 @@ function handleCollision() {
     let win_width = window.innerWidth;
     console.log(win_width);
 
+    if (win_width < 1080){
+        newjeans_height = newjeans.offsetHeight / 2;
+        newjeans_width = newjeans.offsetWidth / 2;
+        left = newjeans.offsetLeft / 2;
+        top = newjeans.offsetTop / 2;
+    }
+
     if (left <= 0 || left + newjeans_width >= win_width) {
         x_incr = -x_incr;  // Corrected direction
         playBumpAudio();
