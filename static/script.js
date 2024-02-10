@@ -99,11 +99,12 @@ function handleCollision() {
     let win_width = window.innerWidth;
     console.log(win_width);
 
-    if (win_height <= 1080){
-        newjeans_height = newjeans.offsetHeight / 2;
-        newjeans_width = newjeans.offsetWidth / 2;
-        //left = newjeans.offsetLeft / 2;
-        //top = newjeans.offsetTop / 2;
+    if (win_width <= 1080) {
+        newjeans.style.width = (newjeans_width / 2) + 'px';
+        newjeans.style.height = (newjeans_height / 2) + 'px';
+    } else {
+        newjeans.style.width = ''; // Reset to default width
+        newjeans.style.height = ''; // Reset to default height
     }
 
     if (left <= 0 || left + newjeans_width >= win_width) {
