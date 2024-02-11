@@ -9,7 +9,6 @@ function submitData() {
     // Retrieve the value from the text box
     var inputValue = document.getElementById("largeTextArea").value;
 
-
     // Check if the text box is not empty
     if (inputValue.trim() !== '') {
         // Use fetch to send the data to the Python backend

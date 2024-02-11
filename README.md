@@ -9,4 +9,4 @@ Coded in Python, JavaScript, HTML, and CSS
 
 
 
-i love newjeans, especially hanni
+i love newjeans, especially hanni. hanni is love, hanni is life.

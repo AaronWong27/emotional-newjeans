@@ -44,11 +44,11 @@ body {
 }
 
 #newjeans img {
-    transform:scale(1);
+    transform: scale(1);
     height: auto;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-height: 1080px) {
    #newjeans {
         transform: scale(0.5);
         border-color: red;
